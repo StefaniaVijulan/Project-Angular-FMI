@@ -1,0 +1,34 @@
+<br><br>
+<div class="container">
+  <br>
+<h1>
+    Login
+</h1>
+<form #loginform="ngForm" (ngSubmit)="loginUser()">
+  <br>
+    <small class="alert-danger">{{message}}</small>
+    <div class="form-group">
+      <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" name="email" [(ngModel)]="userr.email" required  pattern="\w+@[a-zA-z_]+?\.[a-zA-Z]{2,3}$" #email="ngModel"
+      [class.is-invalid]="email.invalid && email.touched">
+      <div *ngIf="email.errors && (email.invalid && email.touched)">
+        <small class="text-danger" *ngIf="email.errors.required">Email is a required field</small  >
+        <small class="text-danger" *ngIf="email.errors.pattern">Enter the valid value of email</small>
+      </div>
+    </div>
+    <br>
+
+    <div class="form-group">
+
+      <input type="password" class="form-control" id="password" placeholder="Password" name="password" [(ngModel)]="userr.password" required #password="ngModel"
+      [class.is-invalid]="password.invalid && password.touched">
+      <small class="text-danger" [class.d-none]="password.valid || password.untouched">Please introduce your password</small>
+    </div>
+    <br>
+    <div class="text-center">
+    <button [disabled]="loginform.form.invalid" type="submit" class="btn btn-warning" style="text-align: center;">Login</button>
+  </div>
+  <br>
+  </form>
+    <p style="text-align: center;">You don't have an account? <br> <small class="float-right" [routerLink]="['/register']" style="color: goldenrod;">Sign Now</small> </p>
+
+</div>
