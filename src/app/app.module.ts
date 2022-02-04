@@ -13,6 +13,8 @@ import { RegisterService } from './register.service';
 import { AuthGuard } from './auth.guard';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { JewelryComponent } from './pages/jewelry/jewelry.component';
+import { JewelryDetailsComponent } from './pages/jewelry-details/jewelry-details.component';
+
 
 
 @NgModule({
@@ -22,14 +24,16 @@ import { JewelryComponent } from './pages/jewelry/jewelry.component';
     RegisterComponent,
     DashboardComponent,
     ProfileComponent,
-    JewelryComponent
+    JewelryComponent,
+    JewelryDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+  
   ],
   providers: [ RegisterService, AuthGuard],
   bootstrap: [AppComponent]

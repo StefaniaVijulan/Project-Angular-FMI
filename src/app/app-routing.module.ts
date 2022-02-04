@@ -6,6 +6,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AuthGuard } from './auth.guard';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { JewelryComponent } from './pages/jewelry/jewelry.component';
+import { JewelryDetailsComponent } from './pages/jewelry-details/jewelry-details.component';
 
 const routes: Routes = [
   {
@@ -29,6 +30,11 @@ const routes: Routes = [
   {
     path:"profile",
     component:ProfileComponent,
+    canActivate : [AuthGuard]
+  },
+  {
+    path:"jewelry/:id",
+    component:JewelryDetailsComponent,
     canActivate : [AuthGuard]
   },
   {

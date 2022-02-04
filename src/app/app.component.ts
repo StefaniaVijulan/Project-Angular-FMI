@@ -8,7 +8,7 @@ import { AuthGuard } from './auth.guard';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'lab2';
+  title = 'ProjectAngular';
 
   constructor(public _registerService: RegisterService){}
 }

@@ -1,2 +1,34 @@
-<p>jewelry works!</p>
-<p></p>
+<br>
+<h2 style="text-align: center;">
+    Jewelry
+</h2>
+<br>
+<div class="card mb-4 shadow-5m" *ngFor="let x of jewelys">
+    <div class="card-body">
+        <p class="card-title">
+            <b>{{x.name}}</b>
+        </p>
+        <p class="card-text">
+            {{x.description}}
+        </p>
+    </div>
+    <div style="  border:2px solid rgb(3, 2, 0); width: 100px; margin: auto; height: 30px;">
+        <p style="text-align: center;"> {{x.price}} USD </p>
+    </div>
+    <br>
+    <div class="button-cls" style="text-align: center;">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-warning" (click)="onSelect(x)" data-toggle="modal" style="text-align: center;" data-target="#exampleModal">
+           Detailii
+        </button>
+
+    </div>
+
+    <br>
+</div>
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <app-jewelry-details [jewel]="selectedJewel"></app-jewelry-details>
+  </div>
